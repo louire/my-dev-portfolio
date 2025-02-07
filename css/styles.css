@@ -1,28 +1,27 @@
-/* Variables y Temas */
+/* Root variables - Light theme */
 :root {
-    /* Tema claro por defecto */
     --bg-primary: #F5F5F5;
     --bg-secondary: #FFFFFF;
-    --accent: #2B5B84;         /* Color azul de Python */
-    --accent-hover: #306998;   /* Python blue más oscuro */
+    --accent: #2B5B84;         
+    --accent-hover: #306998;   
     --text-primary: #222222;
     --text-secondary: #666666;
-    --highlight: #4B8BBE;      /* Python blue más claro */
-    --comment: #91A391;        /* Verde suave para comentarios */
-    --keyword: #FF79C6;        /* Color para palabras clave de Python */
-    --string: #FFB86C;         /* Color para strings */
-    --def: #67E480;           /* Color para definiciones */
+    --highlight: #4B8BBE;      
+    --comment: #91A391;        
+    --keyword: #FF79C6;        
+    --string: #FFB86C;         
+    --def: #67E480;           
     --terminal-bg: #002B36;
     --terminal-text: #839496;
     --terminal-prompt: #859900;
     
-    /* Sombras y Efectos */
+    /* Shadow system */
     --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
     --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
     --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
 }
 
-/* Tema Oscuro */
+/* Dark theme overrides */
 [data-theme="dark"] {
     --bg-primary: #1E1E1E;
     --bg-secondary: #2D2D2D;
@@ -40,7 +39,7 @@
     --shadow-lg: 0 10px 15px rgba(0,0,0,0.4);
 }
 
-/* Reset y Estilos Base */
+/* Base reset and defaults */
 * {
     margin: 0;
     padding: 0;
@@ -61,14 +60,14 @@ body {
     font-size: 1.1rem;
 }
 
-/* Contenedor Principal */
+/* Main container */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
 }
 
-/* Navegación */
+/* Navigation */
 .navbar {
     position: fixed;
     top: 0;
@@ -108,7 +107,7 @@ body {
     color: var(--bg-secondary);
 }
 
-/* Botón de Tema */
+/* Theme toggle */
 .theme-toggle {
     position: fixed;
     bottom: 2rem;
@@ -152,6 +151,18 @@ body {
     flex: 1;
     max-width: 400px;
 }
+.profile-name {
+    text-align: center;
+    margin-top: 1rem;
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: 'JetBrains Mono', monospace;
+    position: relative;
+    z-index: 2;
+}
+
+
 
 .profile-image {
     width: 100%;
@@ -222,7 +233,7 @@ body {
     margin: 1rem 0;
 }
 
-/* Python Syntax Highlighting */
+/* Python Syntax */
 .python-code {
     position: relative;
 }
@@ -352,9 +363,10 @@ input:focus, textarea:focus {
     outline: none;
     border-color: var(--highlight);
     box-shadow: 0 0 0 2px rgba(75, 139, 190, 0.2);
+    transform: translateY(-1px);
 }
 
-/* Botones */
+/* Buttons */
 .btn {
     background: var(--bg-secondary);
     color: var(--accent);
@@ -374,6 +386,29 @@ input:focus, textarea:focus {
     box-shadow: var(--shadow-md);
 }
 
+/* Social Links */
+.social-links {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.social-icon {
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    color: var(--accent);
+    transform: translateY(-3px);
+}
+
+.social-icon i {
+    color: inherit;
+}
+
 /* Footer */
 .footer {
     text-align: center;
@@ -383,7 +418,105 @@ input:focus, textarea:focus {
     background: var(--bg-secondary);
 }
 
-/* Animaciones */
+/* GitHub Profile */
+.github-profile-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem;
+    margin: 2rem 0;
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+.github-profile-link i {
+    font-size: 4rem;
+    color: var(--accent);
+}
+
+.github-profile-link span {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.github-profile-link:hover {
+    transform: translateY(-5px);
+}
+
+.github-profile-link:hover i {
+    color: var(--accent-hover);
+}
+
+/* GitHub Stats */
+.github-stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.github-stats img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: var(--shadow-md);
+}
+
+/* Personal Description */
+.personal-description {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    border: 1px solid var(--accent);
+}
+
+.personal-description p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+.personal-description p:last-child {
+    margin-bottom: 0;
+}
+
+.personal-description .comment {
+    color: var(--comment);
+    margin-bottom: 1rem;
+}
+
+/* WIP Bubble */
+.wip-bubble {
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--accent);
+    padding: 0.75rem 1.5rem;
+    border-radius: 12px;
+    z-index: 1000;
+    box-shadow: var(--shadow-md);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+.wip-bubble .emoji-container {
+    font-size: 1.2rem;
+}
+
+/* Animations */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -399,7 +532,7 @@ input:focus, textarea:focus {
     animation: fadeIn 0.6s ease forwards;
 }
 
-/* Scrollbar Personalizada */
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
     width: 12px;
 }
@@ -451,147 +584,63 @@ input:focus, textarea:focus {
         right: 1rem;
         padding: 0.5rem 1rem;
     }
-}
 
-/* Animaciones de Hover */
-.social-links {
-    display: flex;
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.social-icon {
-    color: var(--text-primary); /* Color principal del tema */
-    font-size: 1.5rem;
-    transition: all 0.3s ease;
-    text-decoration: none;
-}
-
-.social-icon:hover {
-    color: var(--accent); /* Color de acento al hover */
-    transform: translateY(-3px);
-}
-
-/* Sobreescribir cualquier color heredado */
-.social-icon i {
-    color: inherit;
-}
-
-/* Efectos de Enfoque */
-input:focus, textarea:focus {
-    transform: translateY(-1px);
-}
-.github-profile-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    padding: 2rem;
-    margin: 2rem 0;
-    text-decoration: none;
-    color: var(--text-primary);
-    transition: all 0.3s ease;
-}
-
-.github-profile-link i {
-    font-size: 4rem;
-    color: var(--accent);
-}
-
-.github-profile-link span {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.github-profile-link:hover {
-    transform: translateY(-5px);
-}
-
-.github-profile-link:hover i {
-    color: var(--accent-hover);
-}
-
-.github-stats {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    margin: 2rem 0;
-}
-.personal-description {
-    margin-top: 2rem;
-    padding: 1.5rem;
-    background: var(--bg-secondary);
-    border-radius: 8px;
-    border: 1px solid var(--accent);
-}
-
-.personal-description p {
-    margin-bottom: 1rem;
-    line-height: 1.8;
-}
-
-.personal-description p:last-child {
-    margin-bottom: 0;
-}
-
-.personal-description .comment {
-    color: var(--comment);
-    margin-bottom: 1rem;
-}
-
-.github-stats img {
-    max-width: 100%;
-    border-radius: 8px;
-    box-shadow: var(--shadow-md);
-}
-.wip-bubble {
-    position: fixed;
-    bottom: 2rem;
-    left: 2rem;
-    background: var(--bg-secondary);
-    border: 1px solid var(--accent);
-    padding: 0.75rem 1.5rem;
-    border-radius: 12px;
-    z-index: 1000;
-    box-shadow: var(--shadow-md);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.9rem;
-    animation: float 3s ease-in-out infinite;
-}
-
-.wip-bubble .emoji-container {
-    font-size: 1.2rem;
-}
-
-@keyframes float {
-    0% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-    100% {
-        transform: translateY(0px);
-    }
-}
-
-/* Ajuste para móviles */
-@media (max-width: 768px) {
     .wip-bubble {
         bottom: 1rem;
         left: 1rem;
         font-size: 0.8rem;
     }
+
+    .github-stats {
+        flex-direction: column;
+    }
+
+    .profile-container {
+        width: 80%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .code-block {
+        font-size: 0.9rem;
+        padding: 1rem;
+        width: 100%;
+        overflow-x: auto;
+    }
+    .profile-name {
+        font-size: 1.2rem;
+        margin-top: 0.75rem;
+    }
 }
-/* Para pantallas más grandes */
+
+/* Large Screen Optimizations */
 @media (min-width: 768px) {
     .github-stats {
         flex-direction: row;
         justify-content: center;
         flex-wrap: wrap;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Print Styles */
+@media print {
+    .theme-toggle,
+    .wip-bubble,
+    .nav-links {
+        display: none;
+    }
+
+    body {
+        background: white;
+        color: black;
+    }
+
+    .container {
+        max-width: 100%;
+        padding: 0;
     }
 }
