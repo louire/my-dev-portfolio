@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loui Recio - Software Engineer</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- Dark Mode -->
+    <button id="theme-toggle" class="theme-toggle">
+        <i class="fas fa-moon"></i> Dark Mode
+    </button>
+
+    <div class="container">
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="logo">
+                <span class="def">from</span>
+                <span class="keyword">developer</span>
+                <span class="def">import</span>
+                <span class="class">LouiRecio</span>
+            </div>
+            <div class="nav-links">
+                <a href="#about">about()</a>
+                <a href="#skills">skills()</a>
+                <a href="#portfolio">portfolio()</a>
+                <a href="#social">social()</a>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <pre class="code-block python-code">
+<span class="comment"># Developer Profile</span>
+<span class="class">class</span> <span class="def">Developer</span>:
+    <span class="def">def</span> <span class="keyword">__init__</span>(<span class="self">self</span>):
+        <span class="self">self</span>.name = <span class="string">"Loui Recio"</span>
+        <span class="self">self</span>.role = <span class="string">"Software Engineer"</span>
+        <span class="self">self</span>.skills = [
+            <span class="string">"Python"</span>,
+            <span class="string">"AI"</span>,
+            <span class="string">"Backend"</span>
+        ]
+    
+    <span class="def">def</span> <span class="keyword">get_focus</span>(<span class="self">self</span>):
+        <span class="keyword">return</span> <span class="string">"AI and Machine Learning"</span></pre>
+                <div class="social-links">
+                    <a href="https://github.com/louire" class="social-icon"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/louirecio/" class="social-icon"><i
+                            class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="profile-container">
+                <div class="profile-image">
+                    <img src="assets/images/IMG_3885.jpg" alt="Loui Recio">
+                </div>
+                <div class="floating-skills">
+                    <div class="skill-badge">Python</div>
+                    <div class="skill-badge">C#</div>
+                    <div class="skill-badge">AI</div>
+                    <div class="skill-badge">.NET</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <h2>About Me</h2>
+            <div class="about-container">
+                <div class="about-info">
+                    <div class="profile-image-2">
+                        <img src="assets/images/IMG_9153.jpeg" alt="Loui Recio">
+                    </div>
+                    <div class="contact-buttons">
+                        <button class="btn">
+                            <i class="fas fa-envelope"></i>
+                            <span>contact.send()</span>
+                        </button>
+                        <button class="btn">
+                            <i class="fas fa-download"></i>
+                            <span>cv.download()</span>
+                        </button>
+                    </div>
+                    <div class="about-text">
+
+
+                        <div class="personal-description">
+                            <p class="comment"># A bit more about me</p>
+                            <p>Data enthusiast who loves turning complex problems into elegant solutions. When I'm not
+                                coding, you'll find me immersed in fantasy worlds through books or exploring new
+                                technology concepts.</p>
+                            <p>I believe in continuous learning and enjoy diving deep into technical documentation as
+                                much as losing myself in a classic novel. Gaming serves as my creative break, and
+                                there's nothing better than winding down with a glass of fine bourbon.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <pre class="code-block python-code">
+<span class="comment"># About me details</span>
+<span class="def">def</span> <span class="keyword">get_about_me</span>():
+    <span class="keyword">return</span> {
+        <span class="string">"passion"</span>: <span class="string">"Python and Data Science"</span>,
+        <span class="string">"focus"</span>: <span class="string">"AI and Machine Learning"</span>,
+        <span class="string">"goals"</span>: <span class="string">"Building scalable solutions"</span>
+    }</pre>
+                </div>
+            </div>
+            <div class="contribution-container">
+                <div class="contribution-header">
+                    <pre class="code-block python-code">
+                <span class="comment"># Git Stats Overview</span>
+                stats = {
+                    "joined_github": "2020",
+                    "public_repos": "20+",
+                    "languages": ["Python", "JavaScript", "C#"],
+                    "focus_areas": ["AI", "Backend", "Data Science"]
+                }</pre>
+                </div>
+
+                <!-- GitHub Profile Link -->
+                <a href="https://github.com/louire" class="github-profile-link">
+                    <i class="fab fa-github"></i>
+                    <span>@louire</span>
+                </a>
+
+                <div class="github-stats">
+                    <img src="https://github-readme-stats.vercel.app/api?username=louire&show_icons=true&theme=dark"
+                        alt="GitHub Stats">
+                    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=louire&layout=compact&theme=dark"
+                        alt="Top Languages">
+                </div>
+            </div>
+
+            <!-- Skills Section -->
+            <section id="skills" class="skills">
+                <h2>Technical Skills</h2>
+                <div class="skills-container">
+                    <div class="skills-info">
+                        <pre class="code-block python-code">
+<span class="comment"># My tech stack</span>
+<span class="def">def</span> <span class="keyword">get_skills</span>():
+    <span class="keyword">return</span> {
+        <span class="string">"languages"</span>: [<span class="string">"Python"</span>, <span class="string">"C#"</span>, <span class="string">"SQL"</span>],
+        <span class="string">"frameworks"</span>: [<span class="string">"Django"</span>, <span class="string">"FastAPI"</span>, <span class="string">".NET"</span>],
+        <span class="string">"databases"</span>: [<span class="string">"PostgreSQL"</span>, <span class="string">"MongoDB"</span>],
+        <span class="string">"tools"</span>: [<span class="string">"Git"</span>, <span class="string">"Docker"</span>, <span class="string">"Linux"</span>]
+    }</pre>
+                    </div>
+                    <div class="terminal">
+                        <div class="terminal-header">
+                            <div class="terminal-button"></div>
+                            <div class="terminal-button"></div>
+                            <div class="terminal-button"></div>
+                        </div>
+                        <div class="terminal-content">
+                            <p class="command">>> from skills import technologies</p>
+                            <p class="output">['python', 'c#', '.net', 'rust', 'django', 'fastapi']</p>
+                            <p class="command">>> from tools import dev_environment</p>
+                            <p class="output">['vscode', 'pycharm', 'zsh', 'dbeaver', 'anaconda']</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Portfolio Section
+            <section id="portfolio" class="portfolio">
+                <h2>Portfolio</h2>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item">
+                        <img src="assets/images/projects/project1.jpg" alt="AI Project">
+                        <div class="portfolio-info">
+                            <h3>AI Image Recognition</h3>
+                            <p class="comment"># Deep learning model for image classification</p>
+                            <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">TensorFlow</span>
+                                <span class="tag">OpenCV</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+
+            <!-- Social Section -->
+            <section id="social" class="social">
+                <!-- <h2>Connect With Me</h2>
+                <div class="social-grid">
+                    <div class="social-card">
+                        <h3>Developer Community</h3>
+                        <p>Connect with fellow developers, explore AI and backend development.</p>
+                        <a href="#" class="btn">community.join()</a>
+                    </div>
+                    <div class="social-card">
+                        <h3>Latest Content</h3>
+                        <p>Check out my latest insights on Python, AI, and backend development.</p>
+                        <button class="btn">content.watch()</button>
+                    </div>
+                </div>
+ -->
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <h3>Get in Touch</h3>
+                    <form id="contact-form">
+                        <pre class="code-block python-code">
+<span class="comment"># Send me a message</span>
+<span class="def">def</span> <span class="keyword">send_message</span>():</pre>
+                        <input type="text" placeholder="name: str" required>
+                        <div class="form-row">
+                            <input type="email" placeholder="email: str" required>
+                            <input type="text" placeholder="subject: str" required>
+                        </div>
+                        <textarea placeholder="message: str" required></textarea>
+                        <button type="submit" class="btn">message.send()</button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <pre class="code-block">
+<span class="comment"># © 2025 | Built with ♥️ and 💻 by Loui Recio</span></pre>
+            </footer>
+    </div>
+
+    <script src="js/theme-toggle.js"></script>
+    <script src="js/script.js"></script>
+    <div class="wip-bubble">
+        <span>Site on progress</span>
+        <div class="emoji-container">
+            👨‍💻🚜🚧
+        </div>
+    </div>
+</body>
+
+</html>
