@@ -1,10 +1,45 @@
-// Manejo del scroll suave para la navegación
+// Gestión del tema oscuro/claro
+const themeToggle = document.querySelector('.theme-toggle');
+const themeIcon = themeToggle.querySelector('.material-icons');
+
+function setTheme(theme) {
+    if (theme === 'light') {
+        document.body.classList.add('light-mode');
+        themeIcon.textContent = 'dark_mode';
+    } else {
+        document.body.classList.remove('light-mode');
+        themeIcon.textContent = 'light_mode';
+    }
+    localStorage.setItem('theme', theme);
+}
+
+// Cambiar tema al hacer click
+themeToggle.addEventListener('click', () => {
+    const newTheme = document.body.classList.contains('light-mode') ? 'dark' : 'light';
+    setTheme(newTheme);
+});
+
+// Gestión de proyectos (mostrar/ocultar)
+const loadMoreBtn = document.querySelector('.load-more');
+const projectsGrid = document.querySelector('.projects-grid');
+
+
+loadMoreBtn.addEventListener('click', () => {
+    projectsGrid.classList.toggle('show-all');
+    loadMoreBtn.textContent = projectsGrid.classList.contains('show-all') 
+        ? 'Show Less' 
+        : 'Load more';
+});
+
+// Navegación suave al hacer click en los enlaces
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+            targetElement.scrollIntoView({
                 behavior: 'smooth',
                 block: 'start'
             });
@@ -12,170 +47,172 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Animación de aparición al hacer scroll
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: "0px 0px -50px 0px"
-};
+// Botón volver arriba
+const backToTopButton = document.getElementById('back-to-top');
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-        }
-    });
-}, observerOptions);
-
-// Seleccionar todos los elementos que queremos animar
-document.querySelectorAll('section').forEach(section => {
-    section.classList.add('fade-in');
-    observer.observe(section);
-});
-
-// Manejo del formulario de contacto
-const contactForm = document.getElementById('contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        
-        // Recoger los datos del formulario
-        const formData = new FormData(contactForm);
-        const data = Object.fromEntries(formData);
-        
-        // Aquí puedes agregar la lógica para enviar el formulario
-        try {
-            // Simulación de envío
-            await new Promise(resolve => setTimeout(resolve, 1000));
-            
-            // Mostrar mensaje de éxito
-            alert('Message sent successfully!');
-            contactForm.reset();
-        } catch (error) {
-            console.error('Error sending message:', error);
-            alert('There was an error sending your message. Please try again.');
-        }
-    });
-}
-
-// Generar el gráfico de contribuciones
-function generateContributionGraph() {
-    const contributionGraph = document.querySelector('.contribution-graph');
-    if (!contributionGraph) return;
-
-    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-    const grid = document.createElement('div');
-    grid.className = 'contribution-grid';
-    
-    // Crear encabezados de meses
-    const monthsRow = document.createElement('div');
-    monthsRow.className = 'months-row';
-    months.forEach(month => {
-        const monthEl = document.createElement('span');
-        monthEl.textContent = month;
-        monthsRow.appendChild(monthEl);
-    });
-    contributionGraph.appendChild(monthsRow);
-    
-    // Generar cuadrícula de contribuciones
-    for (let i = 0; i < 7; i++) {
-        const row = document.createElement('div');
-        row.className = 'contribution-row';
-        
-        for (let j = 0; j < 52; j++) {
-            const cell = document.createElement('div');
-            cell.className = 'contribution-cell';
-            // Generar un número aleatorio de contribuciones
-            const contributions = Math.floor(Math.random() * 4);
-            cell.classList.add(`level-${contributions}`);
-            cell.setAttribute('data-contributions', contributions);
-            row.appendChild(cell);
-        }
-        
-        grid.appendChild(row);
-    }
-    
-    contributionGraph.appendChild(grid);
-}
-
-// Efecto de hover para las skill badges
-const skillBadges = document.querySelectorAll('.skill-badge');
-skillBadges.forEach(badge => {
-    badge.addEventListener('mouseover', () => {
-        badge.style.transform = 'scale(1.1)';
-        badge.style.transition = 'transform 0.3s ease';
-    });
-    
-    badge.addEventListener('mouseout', () => {
-        badge.style.transform = 'scale(1)';
-    });
-});
-
-// Animación del terminal
-function typeWriter(element, text, speed = 50) {
-    let i = 0;
-    element.textContent = '';
-    
-    function type() {
-        if (i < text.length) {
-            element.textContent += text.charAt(i);
-            i++;
-            setTimeout(type, speed);
-        }
-    }
-    
-    type();
-}
-
-// Inicializar la animación del terminal
-const terminalContent = document.querySelector('.terminal-content');
-if (terminalContent) {
-    const commands = [
-        'ls skills',
-        'python, c#, .net, rust, django, fastapi',
-        'mysql, postgres, sqlite, mongodb',
-        'linux, arduino, raspberry pi',
-        '',
-        'ls tools',
-        'vs code, pycharm, zsh',
-        'dbeaver, anaconda'
-    ];
-    
-    let delay = 0;
-    commands.forEach((command, index) => {
-        const line = document.createElement('p');
-        terminalContent.appendChild(line);
-        setTimeout(() => {
-            typeWriter(line, command);
-        }, delay);
-        delay += command.length * 50 + 500; // Ajustar según la longitud del texto
-    });
-}
-
-// Inicializar todo cuando el DOM esté listo
-document.addEventListener('DOMContentLoaded', () => {
-    generateContributionGraph();
-    
-    // Añadir clase para activar las animaciones iniciales
-    setTimeout(() => {
-        document.body.classList.add('loaded');
-    }, 500);
-});
-
-// Detectar scroll para la navegación
-let lastScroll = 0;
-const navbar = document.querySelector('.navbar');
-
+// Mostrar/ocultar botón según el scroll
 window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-    
-    if (currentScroll > lastScroll) {
-        // Scroll hacia abajo
-        navbar.style.transform = 'translateY(-100%)';
+    if (window.pageYOffset > 300) {
+        backToTopButton.classList.add('visible');
     } else {
-        // Scroll hacia arriba
-        navbar.style.transform = 'translateY(0)';
+        backToTopButton.classList.remove('visible');
     }
+});
+
+// Scroll suave al hacer click en el botón
+backToTopButton.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+// Loader de página
+window.addEventListener('load', () => {
+    // Inicializar particles.js cuando la página esté cargada
+    if (window.particlesJS) {
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#FF7E3B"
+                },
+                "shape": {
+                    "type": "circle",
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#FF7E3B",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 6,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "repulse"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                }
+            },
+            "retina_detect": true
+        });
+    }
+
+    // Inicializar AOS si está disponible
+    if (window.AOS) {
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+    }
+
+    // Ocultar el loader
+    const loader = document.querySelector('.page-loader');
+    if (loader) {
+        loader.classList.add('hidden');
+    }
+});
+
+// Animaciones de entrada para las tarjetas
+function initializeCardAnimations() {
+    const cards = document.querySelectorAll('.project-card, .experience-card, .skills-card, .education-card');
     
-    lastScroll = currentScroll;
+    const observerOptions = {
+        root: null,
+        threshold: 0.1,
+        rootMargin: '0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    cards.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'all 0.6s ease-out';
+        observer.observe(card);
+    });
+}
+particlesJS('particles-js', {
+    "particles": {
+        "number": {
+            "value": 50,  // Reducido de 80 a 50
+            "density": {
+                "enable": true,
+                "value_area": 800
+            }
+        },
+        "opacity": {
+            "value": 0.3,  // Reducido de 0.5 a 0.3
+            "random": false,
+        },
+        "size": {
+            "value": 2,    // Reducido de 3 a 2
+            "random": true,
+        },
+        "move": {
+            "speed": 4,    // Reducido de 6 a 4
+        }
+        // ... resto de tu configuración actual
+    }
+});
+
+// Inicializar cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', () => {
+    // Cargar tema guardado o tema por defecto
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    setTheme(savedTheme);
+    
+    // Inicializar animaciones
+    initializeCardAnimations();
+
+    // Agregar efecto hover a los elementos del footer
+    const footerLinks = document.querySelectorAll('.footer-section a');
+    footerLinks.forEach(link => {
+        link.addEventListener('mouseenter', (e) => {
+            e.target.style.transform = 'translateX(10px)';
+        });
+        link.addEventListener('mouseleave', (e) => {
+            e.target.style.transform = 'translateX(0)';
+        });
+    });
 });

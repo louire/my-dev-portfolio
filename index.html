@@ -1,246 +1,361 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Loui Recio - Software Engineer</title>
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Loui Recio I.</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <style>
+        .particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            top: 0;
+            left: 0
+        }
+    </style>
 </head>
 
 <body>
-    <!-- Dark Mode -->
-    <button id="theme-toggle" class="theme-toggle">
-        <i class="fas fa-moon"></i> Dark Mode
+    <nav class="navbar">
+        <div class="nav-links">
+            <a href="#home">home</a>
+            <a href="#projects">projects</a>
+            <a href="#experience">experience</a>
+            <a href="#skills">skills</a>
+            <a href="#education">education</a>
+            <a href="#contact">contact</a>
+        </div>
+        <button class="theme-toggle" aria-label="Cambiar tema">
+            <span class="material-icons">dark_mode</span>
+        </button>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="title">Loui Recio Izaguirre</h1>
+            <p class="subtitle">Software Engineer | Data Analyst & a Bachelor's in Computer Systems Engineering</p>
+            <p class="subtitle"></p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua.</p>
+            <div class="social-links">
+                <a href="https://github.com/louire" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://linkedin.com/in/louirecio" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="mailto:lreciopersonal@gmail.com" aria-label="Email">
+                    <i class="far fa-envelope"></i>
+                </a>
+            </div>
+            <a href="assets/CV_LouiRecio_en.pdf" download class="btn" style="margin-top: 1rem;">Download Resume</a>
+        </div>
+        <img src="assets/images/ProfilePic.jpg" alt="Foto de perfil" class="profile-img">
+    </section>
+
+    <section id="projects" class="projects">
+        <h2 class="title">My Projects</h2>
+        <div class="projects-grid">
+            <article class="project-card">
+                <img src="assets/project1.jpg" alt="Project 1" class="project-img">
+                <div class="project-content">
+                    <h3 class="project-title">UC - Under Construction</h3>
+                    <p class="project-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <a href="#" class="btn">GitHub Repo</a>
+                </div>
+            </article>
+            <article class="project-card">
+                <img src="assets/project2.jpg" alt="Project 2" class="project-img">
+                <div class="project-content">
+                    <h3 class="project-title">UC - Under Construction</h3>
+                    <p class="project-description">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+                    <a href="#" class="btn">GitHub repo</a>
+                </div>
+            </article>
+            <article class="project-card">
+                <img src="assets/project3.jpg" alt="Project 3" class="project-img">
+                <div class="project-content">
+                    <h3 class="project-title">UC - Under Construction</h3>
+                    <p class="project-description">Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+                    <a href="#" class="btn">GitHub Repo</a>
+                </div>
+            </article>
+            <article class="project-card">
+                <img src="assets/project4.jpg" alt="Project 4" class="project-img">
+                <div class="project-content">
+                    <h3 class="project-title">UC - Under Construction</h3>
+                    <p class="project-description">Duis aute irure dolor in reprehenderit in voluptate velit.</p>
+                    <a href="#" class="btn">Github Repo</a>
+                </div>
+            </article>
+            <!-- Proyectos adicionales que se mostrarán al hacer clic en "Mostrar más" -->
+            <article class="project-card">
+                <img src="assets/project5.jpg" alt="Project 5" class="project-img">
+                <div class="project-content">
+                    <h3 class="project-title">UC - Under Construction</h3>
+                    <p class="project-description">Excepteur sint occaecat cupidatat non proident.</p>
+                    <a href="#" class="btn">GitHub Repo</a>
+                </div>
+            </article>
+            <article class="project-card">
+                <img src="assets/project6.jpg" alt="Project 6" class="project-img">
+                <div class="project-content">
+                    <h3 class="project-title">UC - Under Construction</h3>
+                    <p class="project-description">Sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <a href="#" class="btn">GitHub Repo</a>
+                </div>
+            </article>
+            <article class="project-card">
+                <img src="assets/project7.jpg" alt="Project 7" class="project-img">
+                <div class="project-content">
+                    <h3 class="project-title">UC - Under Construction</h3>
+                    <p class="project-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <a href="#" class="btn">GitHub Repo</a>
+                </div>
+            </article>
+            <article class="project-card">
+                <img src="assets/project8.jpg" alt="Project 8" class="project-img">
+                <div class="project-content">
+                    <h3 class="project-title">UC - Under Construction</h3>
+                    <p class="project-description">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+                    <a href="#" class="btn">GitHub Repo</a>
+                </div>
+            </article>
+        </div>
+        <button class="btn load-more">Load more</button>
+    </section>
+
+    <section id="experience" class="experience">
+        <h2 class="title">Work Experience</h2>
+        <div class="experience-grid">
+            <article class="experience-card">
+                <div class="experience-content">
+                    <h3 class="experience-title">Software Engineer</h3>
+                    <h4 class="experience-company">LR Solutions - Freelancer | Hybrid</h4>
+                    <p class="experience-date">03/2024 - 02/2025</p>
+                    <p class="experience-description">
+                        Developed and deployed high-impact applications from IoT systems to business platforms using
+                        React, Django, Node.js, and Python. Architected systems and RESTful APIs, achieving top SEO
+                        rankings and implementing automated workflow solutions across multiple projects.
+                    </p>
+                </div>
+            </article>
+            <article class="experience-card">
+                <div class="experience-content">
+                    <h3 class="experience-title">Software Engineer Intern</h3>
+                    <h4 class="experience-company">Johnson Controls | On site</h4>
+                    <p class="experience-date">03/2023 - 03/2024</p>
+                    <p class="experience-description">
+                        Engineered an enterprise management system using .NET ecosystem (Blazor, ASP.NET Core, .NET 8)
+                        and DevExpress, reducing processing times by 45%. Optimized SQL Server and MongoDB databases
+                        while implementing Power BI analytics solutions, resulting in 40% performance improvement and
+                        $24,000 annual savings through automated reporting and real-time monitoring dashboards.
+                    </p>
+                </div>
+            </article>
+            <article class="experience-card">
+                <div class="experience-content">
+                    <h3 class="experience-title">Data Analyst Intern</h3>
+                    <h4 class="experience-company">Herbalife | Remote</h4>
+                    <p class="experience-date">01/2023 - 03/2023</p>
+                    <p class="experience-description">
+                        Created interactive dashboards using Tableau and Python for ETL processes, implementing
+                        automated reporting workflows and data visualizations that enabled data-driven decision making
+                        through customer behavior and KPI analysis."
+                    </p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <h2 class="title">Skills</h2>
+        <div class="skills-grid">
+            <article class="skills-card">
+                <h3 class="skills-title">Programming Languages</h3>
+                <ul class="skills-list">
+                    <li>Python</li>
+                    <li>C#</li>
+                    <li>Rust</li>
+                    <li>Javascript</li>
+                    <li>Shell / Bash</li>
+                    <li>Php</li>
+                    <li>SQL</li>
+                </ul>
+            </article>
+            <article class="skills-card">
+                <h3 class="skills-title">Continuously Studying</h3>
+                <ul class="skills-list">
+                    <li>Python</li>
+                    <li>Rust</li>
+                    <li>Tokio (Rust Library)</li>
+                    <li>AI & Data Science</li>
+                    <li>Backend Technologies</li>
+                    <li>Mandarin (Chinese)</li>
+                    <li>Bare Metal</li>
+                </ul>
+            </article>
+            <article class="skills-card">
+                <h3 class="skills-title">Technologies & OS's</h3>
+                <ul class="skills-list">
+                    <li>Django</li>
+                    <li>React & Node.js</li>
+                    <li>PostgreSQL, MySQL & SQL Server</li>
+                    <li>MongoDB</li>
+                    <li>Redis</li>
+                    <li>Raspberry Pi's & Arduino</li>
+                    <li>MacOS, Linux & Windows</li>
+                </ul>
+            </article>
+        </div>
+    </section>
+    <!-- Nueva sección de educación -->
+    <section id="education" class="education">
+        <h2 class="title">Education & Courses</h2>
+        <div class="education-grid">
+            <!-- Universidad -->
+
+
+            <article class="education-card">
+                <div class="education-content">
+                    <div class="education-header">
+                        <h3 class="education-title">Software Developer</h3>
+                        <span class="education-type">Professional Certification</span>
+                    </div>
+                    <h4 class="education-institution">Platzi</h4>
+                    <p class="education-date">2024 - Present</p>
+                    <p class="education-description">
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat.
+                    </p>
+                    <div class="education-achievements">
+                        <span class="achievement">Projects Creation</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="education-card">
+                <div class="education-content">
+                    <div class="education-header">
+                        <h3 class="education-title">Computer Systems Engineering</h3>
+                        <span class="education-type">Bachelor's Degree</span>
+                    </div>
+                    <h4 class="education-institution">Instituto Tecnologico De Matamoros</h4>
+                    <p class="education-date">2018 - 2023</p>
+                    <p class="education-description">
+                        Bachelor's in Computer Systems Engineering with sp ecialization in Industry 4.0 technologies,
+                        encompassing IoT systems development for smart manufacturing, Big Data analytics implementation for
+                        pro duction pro cesses, and industrial cyb ersecurity proto cols. Advanced training in emerging
+                        technologies integration for digital transformation and manufacturing optimization.
+                    </p>
+                    <div class="education-achievements">
+                        <span class="achievement">GPA: 9.0/10</span>
+                        <span class="achievement">Honors Thesis</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="education-card">
+                <div class="education-content">
+                    <div class="education-header">
+                        <h3 class="education-title">Platzi English Academy</h3>
+                        <span class="education-type">Professional Course</span>
+                    </div>
+                    <h4 class="education-institution">Platzi</h4>
+                    <p class="education-date">2023</p>
+                    <p class="education-description">
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                        pariatur.
+                    </p>
+                    <div class="education-achievements">
+                        <span class="achievement">Certificate of Excellence</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2 class="title">Contact</h2>
+        <div class="contact-content">
+            <p>Interested in working together? Contact me!</p>
+            <div class="social-links">
+                <a href="https://github.com/louire" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://linkedin.com/in/louirecio" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="mailto:lreciopersonal@gmail.com" aria-label="Email">
+                    <i class="far fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="#home">home</a></li>
+                    <li><a href="#projects">projects</a></li>
+                    <li><a href="#experience">experience</a></li>
+                    <li><a href="#skills">skills</a></li>
+                    <li><a href="#contact">contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Social Networks</h3>
+                <div class="social-links">
+                    <a href="https://github.com/louire" target="_blank" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/louirecio" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:lreciopersonal@gmail.com" aria-label="Email">
+                        <i class="far fa-envelope"></i>
+                    </a>
+                    <a href="https://x.com/louireciok" target="_blank" aria-label="X">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>email: lreciopersonal@gmail.com</p>
+                <p>whatsapp: +52(868)2500139</p>
+                <p>Tamaulipas, Mexico</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Loui Recio Izaguirre. All rights reserved.</p>
+            <p>Made with <span class="heart">❤️</span> in 🇲🇽</p>
+        </div>
+    </footer>
+
+    <button id="back-to-top" class="back-to-top" aria-label="Volver arriba">
+        <span class="material-icons">arrow_upward</span>
     </button>
 
-    <div class="container">
-        <!-- Navbar -->
-        <nav class="navbar">
-            <div class="logo">
-                <span class="def">from</span>
-                <span class="keyword">developer</span>
-                <span class="def">import</span>
-                <span class="class">LouiRecio</span>
-            </div>
-            <div class="nav-links">
-                <a href="#about">about()</a>
-                <a href="#skills">skills()</a>
-                <a href="#portfolio">portfolio()</a>
-                <a href="#social">social()</a>
-            </div>
-        </nav>
-
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-content">
-                <pre class="code-block python-code">
-<span class="comment"># Developer Profile</span>
-<span class="class">class</span> <span class="def">Developer</span>:
-    <span class="def">def</span> <span class="keyword">__init__</span>(<span class="self">self</span>):
-        <span class="self">self</span>.name = <span class="string">"Loui Recio"</span>
-        <span class="self">self</span>.role = <span class="string">"Software Engineer"</span>
-        <span class="self">self</span>.skills = [
-            <span class="string">"Python"</span>,
-            <span class="string">"AI"</span>,
-            <span class="string">"Backend"</span>
-        ]
-    
-    <span class="def">def</span> <span class="keyword">get_focus</span>(<span class="self">self</span>):
-        <span class="keyword">return</span> <span class="string">"AI and Machine Learning"</span></pre>
-                <div class="social-links">
-                    <a href="https://github.com/louire" class="social-icon"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/louirecio/" class="social-icon"><i
-                            class="fab fa-linkedin"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
-            <div class="profile-container">
-                <div class="profile-image">
-                    <img src="assets/images/IMG_3885.jpg" alt="Loui Recio">
-                </div>
-                <h2 class="profile-name">Loui Recio</h2>
-                <div class="floating-skills">
-                    <div class="skill-badge">Python</div>
-                    <div class="skill-badge">C#</div>
-                    <div class="skill-badge">AI</div>
-                    <div class="skill-badge">.NET</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="about">
-            <h2>About Me</h2>
-            <div class="about-container">
-                <div class="about-info">
-                    <div class="profile-image-2">
-                        <img src="assets/images/IMG_9153.jpeg" alt="Loui Recio">
-                    </div>
-                    <div class="contact-buttons">
-                        <button class="btn">
-                            <i class="fas fa-envelope"></i>
-                            <span>contact.send()</span>
-                        </button>
-                        <button class="btn">
-                            <i class="fas fa-download"></i>
-                            <span>cv.download()</span>
-                        </button>
-                    </div>
-                    <div class="about-text">
-
-
-                        <div class="personal-description">
-                            <p class="comment"># A bit more about me</p>
-                            <p>Data enthusiast who loves turning complex problems into elegant solutions. When I'm not
-                                coding, you'll find me immersed in fantasy worlds through books or exploring new
-                                technology concepts.</p>
-                            <p>I believe in continuous learning and enjoy diving deep into technical documentation as
-                                much as losing myself in a classic novel. Gaming serves as my creative break, and
-                                there's nothing better than winding down with a glass of fine bourbon.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-text">
-                    <pre class="code-block python-code">
-<span class="comment"># About me details</span>
-<span class="def">def</span> <span class="keyword">get_about_me</span>():
-    <span class="keyword">return</span> {
-        <span class="string">"passion"</span>: <span class="string">"Python and Data Science"</span>,
-        <span class="string">"focus"</span>: <span class="string">"AI and Machine Learning"</span>,
-        <span class="string">"goals"</span>: <span class="string">"Building scalable solutions"</span>
-    }</pre>
-                </div>
-            </div>
-            <div class="contribution-container">
-                <div class="contribution-header">
-                    <pre class="code-block python-code">
-                <span class="comment"># Git Stats Overview</span>
-                stats = {
-                    "joined_github": "2020",
-                    "public_repos": "20+",
-                    "languages": ["Python", "JavaScript", "C#"],
-                    "focus_areas": ["AI", "Backend", "Data Science"]
-                }</pre>
-                </div>
-
-                <!-- GitHub Profile Link -->
-                <a href="https://github.com/louire" class="github-profile-link">
-                    <i class="fab fa-github"></i>
-                    <span>@louire</span>
-                </a>
-
-                <div class="github-stats">
-                    <img src="https://github-readme-stats.vercel.app/api?username=louire&show_icons=true&theme=dark"
-                        alt="GitHub Stats">
-                    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=louire&layout=compact&theme=dark"
-                        alt="Top Languages">
-                </div>
-            </div>
-
-            <!-- Skills Section -->
-            <section id="skills" class="skills">
-                <h2>Technical Skills</h2>
-                <div class="skills-container">
-                    <div class="skills-info">
-                        <pre class="code-block python-code">
-<span class="comment"># My tech stack</span>
-<span class="def">def</span> <span class="keyword">get_skills</span>():
-    <span class="keyword">return</span> {
-        <span class="string">"languages"</span>: [<span class="string">"Python"</span>, <span class="string">"C#"</span>, <span class="string">"SQL"</span>],
-        <span class="string">"frameworks"</span>: [<span class="string">"Django"</span>, <span class="string">"FastAPI"</span>, <span class="string">".NET"</span>],
-        <span class="string">"databases"</span>: [<span class="string">"PostgreSQL"</span>, <span class="string">"MongoDB"</span>],
-        <span class="string">"tools"</span>: [<span class="string">"Git"</span>, <span class="string">"Docker"</span>, <span class="string">"Linux"</span>]
-    }</pre>
-                    </div>
-                    <div class="terminal">
-                        <div class="terminal-header">
-                            <div class="terminal-button"></div>
-                            <div class="terminal-button"></div>
-                            <div class="terminal-button"></div>
-                        </div>
-                        <div class="terminal-content">
-                            <p class="command">>> from skills import technologies</p>
-                            <p class="output">['python', 'c#', '.net', 'rust', 'django', 'fastapi']</p>
-                            <p class="command">>> from tools import dev_environment</p>
-                            <p class="output">['vscode', 'pycharm', 'zsh', 'dbeaver', 'anaconda']</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Portfolio Section
-            <section id="portfolio" class="portfolio">
-                <h2>Portfolio</h2>
-                <div class="portfolio-grid">
-                    <div class="portfolio-item">
-                        <img src="assets/images/projects/project1.jpg" alt="AI Project">
-                        <div class="portfolio-info">
-                            <h3>AI Image Recognition</h3>
-                            <p class="comment"># Deep learning model for image classification</p>
-                            <div class="project-tags">
-                                <span class="tag">Python</span>
-                                <span class="tag">TensorFlow</span>
-                                <span class="tag">OpenCV</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section> -->
-
-            <!-- Social Section -->
-            <section id="social" class="social">
-                <!-- <h2>Connect With Me</h2>
-                <div class="social-grid">
-                    <div class="social-card">
-                        <h3>Developer Community</h3>
-                        <p>Connect with fellow developers, explore AI and backend development.</p>
-                        <a href="#" class="btn">community.join()</a>
-                    </div>
-                    <div class="social-card">
-                        <h3>Latest Content</h3>
-                        <p>Check out my latest insights on Python, AI, and backend development.</p>
-                        <button class="btn">content.watch()</button>
-                    </div>
-                </div>
- -->
-                <!-- Contact Form -->
-                <div class="contact-form">
-                    <h3>Get in Touch</h3>
-                    <form id="contact-form">
-                        <pre class="code-block python-code">
-<span class="comment"># Send me a message</span>
-<span class="def">def</span> <span class="keyword">send_message</span>():</pre>
-                        <input type="text" placeholder="name: str" required>
-                        <div class="form-row">
-                            <input type="email" placeholder="email: str" required>
-                            <input type="text" placeholder="subject: str" required>
-                        </div>
-                        <textarea placeholder="message: str" required></textarea>
-                        <button type="submit" class="btn">message.send()</button>
-                    </form>
-                </div>
-            </section>
-
-            <!-- Footer -->
-            <footer class="footer">
-                <pre class="code-block">
-<span class="comment"># © 2025 | Built with ♥️ and 💻 by Loui Recio</span></pre>
-            </footer>
+    <div class="page-loader">
+        <div class="loader"></div>
     </div>
 
-    <script src="js/theme-toggle.js"></script>
+    <div id="particles-js"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="js/script.js"></script>
-    <div class="wip-bubble">
-        <span>Site on progress</span>
-        <div class="emoji-container">
-            👨‍💻🚜🚧
-        </div>
-    </div>
 </body>
 
 </html>
