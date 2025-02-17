@@ -144,6 +144,12 @@ window.addEventListener('load', () => {
         loader.classList.add('hidden');
     }
 });
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
 
 // Animaciones de entrada para las tarjetas
 function initializeCardAnimations() {
